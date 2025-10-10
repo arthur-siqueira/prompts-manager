@@ -1,0 +1,20 @@
+:root {
+  --white: #ffffff;
+
+  --accent-600: #4863f7;
+  --accent-500: #7878d7;
+
+  --alert-600: #ff5c5c;
+
+  --gray-900: #0d0d0d;
+  --gray-800: #111111;
+  --gray-700: #1a1a1a;
+  --gray-200: #424242;
+  --gray-100: #737373;
+}
+
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+}
