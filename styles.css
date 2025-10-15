@@ -1,3 +1,7 @@
+/* Garante que o botão open-toggle aparece quando a sidebar está colapsada */
+body .sidebar.collapsed ~ .open-toggle {
+  display: block !important;
+}
 :root {
   --white: #ffffff;
 
@@ -158,9 +162,11 @@ body {
 }
 
 .open-toggle {
-  position: absolute;
+  position: fixed;
   top: 62px;
   left: 62px;
+  z-index: 1101;
+  display: none;
 }
 
 .sidebar {
@@ -170,14 +176,22 @@ body {
   flex-direction: column;
   gap: 50px;
   padding: 32px;
-  background-color: var(--gray--800);
+  background-color: var(--gray-800);
   border-right: 0.5px solid var(--gray--700);
+}
+
+.sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateX(0);
 }
 
 .sidebar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 32px;
 }
 
 .logo {
@@ -187,6 +201,7 @@ body {
 .sidebar-content {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 .search-container {
@@ -283,4 +298,32 @@ body {
   width: 20px;
   height: 20px;
   stroke: var(--alert-600);
+}
+
+@media (max-width: 950px) {
+  .open-toggle {
+    display: block;
+    top: 38px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80%;
+    max-width: 360px;
+    transform: translateX(-100%);
+    z-index: 1100;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main {
+    padding: 24px 32px;
+    margin-left: 0;
+    overflow-y: auto;
+  }
 }
