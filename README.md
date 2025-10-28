@@ -2,4 +2,5 @@
 
 Um aplicação web que salva prompts importantes para poder reutiliza-los quando necessário
 
-Feito usando com as tecnologias: Javascript, HTML e CSS
+Feito com as tecnologias: Javascript, HTML e CSS
+
